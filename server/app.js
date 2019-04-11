@@ -12,6 +12,13 @@ var app = express();
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
+var mongoDB = 'mongodb+srv://admin:admin@cluster0-w2svx.mongodb.net/Mern?retryWrites=true';
+mongoose.connect(mongoDB, { useNewUrlParser: true });
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+//Set up mongoose connection
+var mongoose = require('mongoose');
 
 // USE YOUR OWN CONNECTION STRING
 // var mongoDB = 'mongodb+srv://cs_test:P1ng@P0ng@cluster0-mhpvz.gcp.mongodb.net/merndb?retryWrites=true';
